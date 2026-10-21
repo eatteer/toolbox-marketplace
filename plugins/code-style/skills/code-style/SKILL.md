@@ -1,9 +1,9 @@
 ---
-name: aesthetic-code
+name: code-style
 description: Write readable, visually pleasant code - well spaced, with descriptive names, short functions, explicit logic and a clear structure, instead of dense, cramped blocks. Use this skill whenever you write, generate, refactor or review code in any language, even if the user doesn't explicitly ask for "clean code".
 ---
 
-# Aesthetic code
+# Code style
 
 The goal: someone opening the file for the first time should understand **what the code does**
 within seconds, and the visual shape of the code should mirror its logical structure.

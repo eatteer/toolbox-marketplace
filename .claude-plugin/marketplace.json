@@ -7,8 +7,8 @@
   },
   "plugins": [
     {
-      "name": "aesthetic-code",
-      "source": "./plugins/aesthetic-code",
+      "name": "code-style",
+      "source": "./plugins/code-style",
       "category": "development",
       "description": "Makes Claude write readable, visually pleasant code: well spaced, with good names and best practices."
     },
