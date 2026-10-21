@@ -1,10 +1,14 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "aesthetic-code",
+  "displayName": "Aesthetic Code",
   "version": "1.0.0",
   "description": "Makes Claude write readable, visually pleasant code: well spaced, with good names and best practices.",
   "author": {
     "name": "Juan Vanegas"
   },
+  "homepage": "https://github.com/eatteer/toolbox-marketplace/tree/main/plugins/aesthetic-code",
+  "repository": "https://github.com/eatteer/toolbox-marketplace",
   "license": "MIT",
   "keywords": ["clean-code", "readability", "best-practices", "style"]
 }

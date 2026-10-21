@@ -1,14 +1,16 @@
 {
-  "name": "aesthetic-code-marketplace",
-  "description": "Skills that make Claude write readable, aesthetic code.",
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "toolbox-marketplace",
+  "description": "Small, independent utilities for Claude Code, each packaged as its own plugin. Install only the ones you need.",
   "owner": {
     "name": "Juan Vanegas"
   },
   "plugins": [
     {
       "name": "aesthetic-code",
-      "source": "./",
-      "description": "Readable, visually pleasant code: spacing, good names and best practices."
+      "source": "./plugins/aesthetic-code",
+      "category": "development",
+      "description": "Makes Claude write readable, visually pleasant code: well spaced, with good names and best practices."
     }
   ]
 }

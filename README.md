@@ -1,34 +1,37 @@
-# aesthetic-code
+# toolbox-marketplace
 
-A Claude skill that makes it write **readable, visually pleasant code**:
-well spaced, with descriptive names, short functions and no crammed-together blocks.
+Small, independent utilities for Claude Code. Each one is its own plugin,
+so you install only the ones you need.
 
 ## Installation
 
-### Claude Code (as a plugin)
+Add the marketplace once:
 
 ```
-/plugin marketplace add eatteer/aesthetic-code
-/plugin install aesthetic-code@aesthetic-code-marketplace
+/plugin marketplace add eatteer/toolbox-marketplace
 ```
 
-### Claude Code (manual)
+Then install the plugins you want:
 
-Copy the `skills/aesthetic-code` folder into:
+```
+/plugin install <plugin>@toolbox-marketplace
+```
 
-- `~/.claude/skills/` to use it across all your projects, or
-- `.claude/skills/` inside a specific project.
+## Plugins
 
-### Claude.ai / desktop app
+| Plugin | What it does |
+| --- | --- |
+| [aesthetic-code](plugins/aesthetic-code) | Makes Claude write readable, visually pleasant code: well spaced, with good names and best practices. |
 
-Zip the `skills/aesthetic-code` folder and upload it under
-**Settings → Capabilities → Skills**.
+## Adding a plugin
 
-## What's included
+1. Create `plugins/<plugin>/` with a `.claude-plugin/plugin.json`, a `README.md`, a `LICENSE`
+   and its components (`skills/`, `commands/`, `agents/` or `hooks/`, whichever it needs).
+2. Register it in `.claude-plugin/marketplace.json` with `"source": "./plugins/<plugin>"`.
+3. Add a row to the table above.
 
-- `skills/aesthetic-code/SKILL.md` — the rules: spacing, naming, functions, early returns,
-  explicit over implicit, comments, structure and a final checklist.
-- `skills/aesthetic-code/references/examples.md` — before/after examples in several languages.
+Each plugin keeps its own `version`, so updating one never forces an update of the others.
+Bump the `version` in the plugin's `plugin.json` on every change, otherwise users won't receive the update.
 
 ## License
 
