@@ -1,0 +1,10 @@
+{
+  "name": "aesthetic-code",
+  "version": "1.0.0",
+  "description": "Makes Claude write readable, visually pleasant code: well spaced, with good names and best practices.",
+  "author": {
+    "name": "Juan Vanegas"
+  },
+  "license": "MIT",
+  "keywords": ["clean-code", "readability", "best-practices", "style"]
+}

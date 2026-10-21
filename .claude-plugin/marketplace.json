@@ -1,0 +1,14 @@
+{
+  "name": "aesthetic-code-marketplace",
+  "description": "Skills that make Claude write readable, aesthetic code.",
+  "owner": {
+    "name": "Juan Vanegas"
+  },
+  "plugins": [
+    {
+      "name": "aesthetic-code",
+      "source": "./",
+      "description": "Readable, visually pleasant code: spacing, good names and best practices."
+    }
+  ]
+}
