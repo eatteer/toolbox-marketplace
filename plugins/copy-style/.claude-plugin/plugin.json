@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "copy-style",
+  "displayName": "Copy Style",
+  "version": "1.0.0",
+  "description": "Makes Claude write consistent copy: sentence case, one term per concept and the same tone everywhere.",
+  "author": {
+    "name": "Juan Vanegas"
+  },
+  "homepage": "https://github.com/eatteer/toolbox-marketplace/tree/main/plugins/copy-style",
+  "repository": "https://github.com/eatteer/toolbox-marketplace",
+  "license": "MIT",
+  "keywords": ["copywriting", "ux-writing", "sentence-case", "terminology", "consistency"]
+}

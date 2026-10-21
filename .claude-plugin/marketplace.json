@@ -11,6 +11,12 @@
       "source": "./plugins/aesthetic-code",
       "category": "development",
       "description": "Makes Claude write readable, visually pleasant code: well spaced, with good names and best practices."
+    },
+    {
+      "name": "copy-style",
+      "source": "./plugins/copy-style",
+      "category": "productivity",
+      "description": "Makes Claude write consistent copy: sentence case, one term per concept and the same tone everywhere."
     }
   ]
 }

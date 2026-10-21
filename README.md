@@ -22,6 +22,7 @@ Then install the plugins you want:
 | Plugin | What it does |
 | --- | --- |
 | [aesthetic-code](plugins/aesthetic-code) | Makes Claude write readable, visually pleasant code: well spaced, with good names and best practices. |
+| [copy-style](plugins/copy-style) | Makes Claude write consistent copy: sentence case, one term per concept and the same tone everywhere. |
 
 ## Adding a plugin
 
