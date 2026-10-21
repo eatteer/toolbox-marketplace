@@ -56,6 +56,7 @@ def process_order(order):
 
     order.total = subtotal - discount
     order.status = "processed"
+
     db.save(order)
 
     send_email(order.customer.email, order.total)
@@ -63,9 +64,62 @@ def process_order(order):
     return order
 ```
 
+### Within a step: separate by kind of statement
+
+Lines that belong to the same business step can still be different *kinds* of code. Being
+related is not a reason to glue them together. Inside a step, give each kind its own group:
+
+- **Assignments and declarations**, including `value = call()`: what matters there is the value.
+- **Standalone calls with side effects**: saving, sending, logging, emitting events.
+- **Control-flow blocks** (`if`, `for`, `while`, `try`, `switch`): a blank line before and after.
+- **`return` / `throw`** at the end of a function: a blank line before it, unless it is the only
+  statement in its block.
+
+Statements of the same kind stay together: three consecutive assignments are one group, and two
+consecutive side-effect calls are one group.
+
+Bad:
+
+```javascript
+async function registerUser(input) {
+  const email = input.email.trim().toLowerCase();
+  const existingUser = await usersRepository.findByEmail(email);
+  if (existingUser) {
+    throw new ConflictError(`Email already registered: ${email}`);
+  }
+  const passwordHash = await hashPassword(input.password);
+  const user = await usersRepository.create({ email, passwordHash });
+  await mailer.sendWelcome(user.email);
+  logger.info("User registered", { userId: user.id });
+  return user;
+}
+```
+
+Good:
+
+```javascript
+async function registerUser(input) {
+  const email = input.email.trim().toLowerCase();
+  const existingUser = await usersRepository.findByEmail(email);
+
+  if (existingUser) {
+    throw new ConflictError(`Email already registered: ${email}`);
+  }
+
+  const passwordHash = await hashPassword(input.password);
+  const user = await usersRepository.create({ email, passwordHash });
+
+  await mailer.sendWelcome(user.email);
+  logger.info("User registered", { userId: user.id });
+
+  return user;
+}
+```
+
 Rules:
 
 - One blank line between logical blocks (validate → compute → persist → notify).
+- Inside a block, one blank line between different kinds of statements (see above).
 - Keep lines that belong together grouped; separate them from those that don't.
 - Don't sprinkle blank lines randomly or after every other line: whitespace must mean something.
 - Separate functions and classes according to the language's convention (e.g. 2 lines in Python).
@@ -226,6 +280,8 @@ const config = {
 ## Checklist before delivering code
 
 - [ ] Are logical steps separated by blank lines?
+- [ ] Within each step, are assignments, side-effect calls, control-flow blocks and the final
+      `return` in separate groups?
 - [ ] Is every name understandable without reading its implementation?
 - [ ] Are there any unnamed magic numbers or strings?
 - [ ] Does any function do more than one thing or nest more than 3 levels deep?

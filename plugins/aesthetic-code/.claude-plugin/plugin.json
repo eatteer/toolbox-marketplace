@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "aesthetic-code",
   "displayName": "Aesthetic Code",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Makes Claude write readable, visually pleasant code: well spaced, with good names and best practices.",
   "author": {
     "name": "Juan Vanegas"
